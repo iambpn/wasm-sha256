@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SHA256 wasm</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generate SHA256 Digest</h1>
+        <textarea id="to_hash" placeholder="Enter Text"></textarea>
+        <div class="action">
+            <button id="get_digest">Get Digest</button>
+        </div>
+        <div>
+            <h3>Digest:</h3>
+            <textarea id="digest" disabled></textarea>
+        </div>
+    </div>
+    <script type="module">
+      import init, {get_hash} from "./pkg/wasm_rust.js";
+
+      let isInitialized = false;
+      init()
+        .then(() => {
+          console.log("Wasm Initialized");
+          isInitialized = true;
+        });
+
+      let to_hash = document.getElementById("to_hash");
+      let get_digest = document.getElementById("get_digest");
+      let show_digest = document.getElementById("digest");
+
+      get_digest.addEventListener("click", () => {
+        if (isInitialized) {
+          show_digest.innerText = get_hash(to_hash.value);
+        }
+        else {
+          console.log("Wasm not Initialized. please wait.")
+        }
+      })
+    </script>
+</body>
+</html>
