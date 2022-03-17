@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "copyfiles -E -u 3 ../wasm-rust/pkg/* pkg",
     "start": "live-server --no-browser",
-    "build": "copyfiles -E pkg/wasm_rust.js pkg/wasm_rust_bg.wasm assets/* index.html ../dist",
+    "build": "copyfiles -E pkg/wasm_rust.js pkg/wasm_rust_bg.wasm assets/** index.html ../dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
