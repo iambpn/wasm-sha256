@@ -1,0 +1,15 @@
+{
+  "name": "wasm-rust",
+  "collaborators": [
+    "Bipin Maharjan <21078512+iambpn@users.noreply.github.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "wasm_rust_bg.wasm",
+    "wasm_rust.js",
+    "wasm_rust.d.ts"
+  ],
+  "module": "wasm_rust.js",
+  "types": "wasm_rust.d.ts",
+  "sideEffects": false
+}

@@ -1,0 +1,21 @@
+{
+  "name": "serve-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "copyfiles -E -u 3 ../wasm-rust/pkg/* pkg",
+    "start": "live-server --no-browser",
+    "build": "copyfiles -E pkg/wasm_rust.js pkg/wasm_rust_bg.wasm assets/* index.html ../dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "copyfiles": "^2.4.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.1.0"
+  }
+}
